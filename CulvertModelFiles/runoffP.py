@@ -123,7 +123,7 @@ def calculate(sorted_filename, rainfall_adjustment, output_filename, skipped_fil
         # / 8.64 creates those units from a unitless value
 
         q_peak = Q * qu * ws_area #m^3/s
-        Q_daily = Q * ws_area *10000/(3600*24)   # updated 6/3/2019 for cms units # Jo added 4/1/2019 - units are cm depth
+        Q_daily = Q * ws_area *10000/(3600*24)   # updated 6/3/2019 for cms units 
         #qu has weird units which take care of the difference between Q in cm and area in km2
 
         # Optional Stream Stats calculations here (Jo added in June 2019)
@@ -224,7 +224,7 @@ def calculate(sorted_filename, rainfall_adjustment, output_filename, skipped_fil
                 csv_writer.writerow(skipped)
 
         if (SSA == True):
-            with open(output_filename[:-19] + '_StreamStatsAreaBasedQ_CFS.csv', 'wb') as output_file:
+            with open(output_filename[:-19] + '_StreamStatsAreaBasedQ_CMS.csv', 'wb') as output_file:
                 csv_writer = csv.writer(output_file)
                 csv_writer.writerow(['BarrierID', 'Area_sqkm', 'Av_CM_SS_Ratio', 'Max_Ratio', 'Min_Ratio', 'Region', 'Y1.25', 'Y1.5', 'Y2', 'Y5','Y10','Y25','Y50','Y100','Y200','Y500'])
                 for SSA_Q in SSA_Qs:
