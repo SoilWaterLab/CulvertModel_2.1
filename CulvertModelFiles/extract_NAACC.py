@@ -26,7 +26,7 @@ CD = pd.read_csv(raw_data,sep = ',', header=0)
 if INDEXinfo == "Y" or INDEXinfo == "y" or INDEXinfo == "yes":
 	FieldData = CD.iloc[:,(0,35,20,19,26,49,22,44,47,43,27,61,39,55,58,54,11,8,24)].copy()
 else:  # Else read in using the column names
-	FieldData = CD[['Survey_Id','Naacc_Culvert_Id','GPS_Y_Coordinate','GPS_X_Coordinate','Road','Material','Inlet_Type','Inlet_Structure_Type','Inlet_Width','Inlet_Height','Road_Fill_Height','Slope_Percent','Crossing_Structure_Length','Outlet_Structure_Type','Outlet_Width','Outlet_Height','Crossing_Type','Crossing_Comment','Number_Of_Culverts']].copy()
+	FieldData = CD[['Survey_Id','Naacc_Culvert_Id','GIS_Latitude','GIS_Longitude','Road','Material','Inlet_Type','Inlet_Structure_Type','Inlet_Width','Inlet_Height','Road_Fill_Height','Slope_Percent','Crossing_Structure_Length','Outlet_Structure_Type','Outlet_Width','Outlet_Height','Crossing_Type','Crossing_Comment','Number_Of_Culverts']].copy()
 
 
 # OLD headers! 
