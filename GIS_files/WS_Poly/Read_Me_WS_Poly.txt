@@ -1,0 +1,3 @@
+This folder will populate with individual polygon shapefiles for each road-stream crossing watershed.  These watersheds are later appended to the All_Culverts shapefile.
+
+If you have watershed shapefiles from another source, name them by their barrierid follwed by ws: Eg if your project folder is called ALB, your barrier ids would be 1ALB, 2ALB, etc, and the names of your watershed shapefiles should be 1ALBws, 2ALBws etc.  

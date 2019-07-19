@@ -1,0 +1,1 @@
+This folder will populate with temporary files needed to calculate parameters for each watershed.  
