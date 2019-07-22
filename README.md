@@ -2,6 +2,8 @@
 Edits by Jo Archibald (jaa78@cornell.edu)
 Updated Cornell Culvert Model with a fix for peak flow estimation.
 
+This model requires ArcGIS 10.3+ (developed on Arc 10.6), and python 2.7 on Windows. 
+
 Model Updates
 1. Developed an empirical relationship between 24-hour CN-derived streamflow, and peak streamflow based on small USGS gauges (<20 square miles) to be used in determining peak flow through culverts.  This addressed the concern that model users were noting unreasonably high flow through their stream crossings, and very low return periods passed.
 
