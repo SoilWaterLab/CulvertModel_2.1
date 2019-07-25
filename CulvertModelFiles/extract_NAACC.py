@@ -13,7 +13,7 @@
 
 ws_name=raw_input("Enter the name of your data folder:")
 raw_data = "../" + ws_name + "/" + ws_name + ".csv"  # Edited for new file setup Jan 2019
-INDEXinfo = raw_input("Column placement follows the original instructions?")
+INDEXinfo = raw_input("Input file follows strict (older) placement requirements? (If not, just need exact column names)  ")
     # If no, we expect the names to match exactly, but placement doesn't matter
 
 import numpy, os, re, csv
@@ -82,10 +82,9 @@ FieldData = FieldData.assign(BarrierID = [str(i+1) + ws_name[:3].upper() for i i
 for SI in FieldData.loc[FieldData['Flags']>1]['Survey_ID'].unique():
 	NC = FieldData.loc[FieldData['Survey_ID'] == SI]['Survey_ID'].count() # Number of culverts we will model at site
 	ONC = FieldData.loc[FieldData['Survey_ID'] == SI]['Flags'].max() # Number culverts noted at site
-	print NC
-	print ONC
 	if NC <> ONC:
 		FieldData.loc[FieldData['Survey_ID'] == SI, 'Modeling_notes'] = "Not all culverts modeled at crossing. Started with " + str(ONC)
+		print "Not all culverts modeled at Survey ID " + str(SI) + " . Started with " + str(ONC) + " but kept " + str(NC)
 	FieldData.loc[FieldData['Survey_ID'] == SI, 'Flags'] = NC
 
 
