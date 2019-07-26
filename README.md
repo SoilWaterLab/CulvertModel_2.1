@@ -20,6 +20,7 @@ Spatial Data Access for NY State:
 https://cornell.box.com/s/ygzkpxtu6doat8hheatjcvmx5nqdkfkq
 
 Video Guides for running the model here: 
+
 1 GetCulvertModel FileStructure: https://youtu.be/K6fkDvqDtVg 
 
 2 Extract Data https://youtu.be/KykXNTjVwT8 
