@@ -1,10 +1,10 @@
 # Runoff calculation model
-# David Gold
+# David Gold, based off of the runoff model created by Rebecca Marjerson in 2013
 # August 2015
 #
-# Edited by Jo Archibald January 2019 to produce a skipped-watershed file
-#   edited 5/30/2019 in order for each watershed to have their own precip inputs
-# Based off of the runoff model created by Rebecca Marjerson in 2013
+# Edited by Jo Archibald (jaa78@cornell.edu) in spring/summer 2019 
+#   - Each watershed can have their own precip inputs
+#   - New formulation for qu, ("Peak multiplier"),based on linear relationship with Tc 
 #
 # Determine the runoff peak flow using the SCS curve number method (see TR-55 document for further details)
 # 
@@ -119,6 +119,7 @@ def calculate(sorted_filename, rainfall_adjustment, output_filename, skipped_fil
         Const1 = numpy.array([0.367, 0.367, 0.481, 0.559, 0.658, 0.733, 0.81, 0.888, 0.996])
 
         qu = (Const0 - Const1 * tc)/8.64
+        qu = numpy.array([0.14 if i < 0.14 else i for i in qu]) # prevents peak flow being less than 1.2x daily flow
         # qu would have to be m^3/s per km^2 per cm :
         # / 8.64 creates those units from a unitless value
 
